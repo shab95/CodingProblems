@@ -5,7 +5,7 @@ def max_sub_array_of_size_k(k, arr):
     max_sum = 0
     window_sum = 0
     window_start = 0
-    for window_end in range(arr):
+    for window_end in range(len(arr)):
         window_sum += arr[window_end]
         if ((window_end - window_start + 1) == k):
             max_sum = max(window_sum, max_sum)
