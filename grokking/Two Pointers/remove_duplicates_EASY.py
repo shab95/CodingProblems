@@ -45,6 +45,9 @@ iterate through index 2...n-1 until it finds a non duplicate of index 0. Once it
 in that index to the non duplicate pointer's index(which is 1 right now). Once the copy happens, both pointers are increased by one. 
 Now, the next pointer will continue until it finds a number that is not a duplicate of the number that was just copied to the previous
 value of the nonDuplicate pointer.
+
+Time Complexity: O(N) - The outer for loop processes each element exactly once.
+Space Complexity: O(1) - No extra space is used.
 '''
 
 
