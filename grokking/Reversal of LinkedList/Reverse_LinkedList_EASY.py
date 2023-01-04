@@ -19,15 +19,33 @@ class Node:
 
 
 def reverse(head):
-    prev, curr, next = None, head, head.next
-
-    while next:
+    prev = None
+    curr = head
+    while (curr):
+        afterCurr = curr.next
         curr.next = prev
         prev = curr
-        curr = next
-        next = next.next
-    curr.next = prev
-    return curr
+        curr = afterCurr
+    head = prev
+    return head
+
+
+'''
+Summary:
+
+This problem can be done by iterating the list once and keeping three pointers. One for the node we are currently looking at, curr.
+One for the node before the one we are looking at, prev. Lastly, there is a pointer for the one after the one we're looking at, afterCurr.
+
+We start at the head node and save the head.next to afterCurr for storage. We then point curr to prev. This is what actually reverses
+the linked list. Now, to iterate forward we move prev and curr up one step. We do this by setting prev to curr and curr to 
+the afterCurr variable we stored before. We keep doing this until curr becomes null/none. Null/none indicates the end of the linked list.
+
+Since curr is null and prev is set to the node right before curr, we know that prev is the node that is the end of the original linkedlist.
+This also means that it is the first node in the reversed linked list, which is why we set head to prev and return head.
+
+Time Complexity: O(N) - One iteration is all that is needed.
+Space Complexity: O(1) - No extra space is used.
+'''
 
 
 def main():
